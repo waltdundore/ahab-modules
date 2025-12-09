@@ -1,0 +1,32 @@
+name: apache
+version: 1.0.0
+description: Apache HTTP Server 2.4 - Industry-standard web server
+platforms:
+  - fedora
+  - debian
+  - ubuntu
+docker:
+  image: httpd:2.4
+  container_name: ahab_apache
+  ports:
+    - "8080:80"
+  volumes:
+    - ./html:/usr/local/apache2/htdocs:ro
+  restart: unless-stopped
+  networks:
+    - ahab_network
+dependencies: []
+notes: |
+  Apache HTTP Server is the world's most widely used web server.
+  
+  Configuration:
+  - Listens on port 8080 (mapped to container port 80)
+  - Serves content from ./html directory
+  - Read-only volume mount for security
+  
+  Access:
+  - http://localhost:8080
+  
+  To customize:
+  - Place your HTML files in ./html directory
+  - Restart container: docker-compose restart apache

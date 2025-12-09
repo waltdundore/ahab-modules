@@ -1,0 +1,22 @@
+# Generated files
+docker-compose.yml
+.env
+
+# Test files
+test-results/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
